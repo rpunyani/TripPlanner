@@ -50,7 +50,7 @@ struct AuthView: View {
                 .foregroundStyle(.blue)
                 .padding(.top, 40)
             
-            Text("TravelApp")
+            Text("Safar")
                 .font(.largeTitle.bold())
             
             Text(isSignUp ? "Create your account to start planning" : "Sign in to access your trips")

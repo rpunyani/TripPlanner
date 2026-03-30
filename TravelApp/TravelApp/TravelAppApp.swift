@@ -13,14 +13,12 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 struct TravelAppApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     @State private var dataStore = DataStore()
-    @State private var aiService = AISuggestionService()
     @State private var firebaseService = FirebaseService()
     
     var body: some Scene {
         WindowGroup {
             RootView()
                 .environment(dataStore)
-                .environment(aiService)
                 .environment(firebaseService)
         }
     }

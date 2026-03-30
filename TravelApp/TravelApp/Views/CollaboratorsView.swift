@@ -151,7 +151,7 @@ struct CollaboratorsView: View {
         store.addCollaborator(collaborator, to: trip.id)
         
         if !email.isEmpty {
-            collaboratorNote = "\(newName.trimmingCharacters(in: .whitespaces)) will see this trip when they sign in with \(email). They must have a TravelApp account."
+            collaboratorNote = "\(newName.trimmingCharacters(in: .whitespaces)) will see this trip when they sign in with \(email). They must have a Safar account."
         }
         
         newName = ""
@@ -216,13 +216,13 @@ struct ShareSheetView: View {
                 
                 // Simulated share link
                 HStack {
-                    Text("travelapp://invite/\(tripName.lowercased().replacingOccurrences(of: " ", with: "-"))")
+                    Text("safar://invite/\(tripName.lowercased().replacingOccurrences(of: " ", with: "-"))")
                         .font(.caption.monospaced())
                         .foregroundStyle(.blue)
                         .lineLimit(1)
                     
                     Button {
-                        UIPasteboard.general.string = "travelapp://invite/\(tripName.lowercased().replacingOccurrences(of: " ", with: "-"))"
+                        UIPasteboard.general.string = "safar://invite/\(tripName.lowercased().replacingOccurrences(of: " ", with: "-"))"
                     } label: {
                         Image(systemName: "doc.on.doc")
                             .font(.caption)

@@ -393,6 +393,7 @@
 				DEVELOPMENT_TEAM = UJ65LJ8L6H;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Safar;
 				INFOPLIST_KEY_NSCameraUsageDescription = "We need camera access to take photos for your trip.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "We need photo library access to add images to your itinerary.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -424,6 +425,7 @@
 				DEVELOPMENT_TEAM = UJ65LJ8L6H;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Safar;
 				INFOPLIST_KEY_NSCameraUsageDescription = "We need camera access to take photos for your trip.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "We need photo library access to add images to your itinerary.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

@@ -30,7 +30,6 @@ struct DayWiseView: View {
     @State var trip: Trip
     let tripId: UUID
     @Environment(DataStore.self) private var store
-    @Environment(AISuggestionService.self) private var aiService
     @State private var selectedDayIndex: Int = 0
     @State private var showAddItinerary = false
     @State private var prefillDate: Date = Date()
@@ -265,18 +264,6 @@ struct DayWiseView: View {
                     FreeSlotRow(slot: slot, timeFormatter: timeFormatter) {
                         openAddItinerary(date: selectedDate, time: slot.startTime)
                     }
-                    AISuggestionsView(
-                        slot: slot,
-                        destination: trip.destination,
-                        dayDate: selectedDate,
-                        existingItineraries: itinerariesForDay(selectedDate),
-                        tripId: tripId,
-                        onAdd: { item in
-                            store.addItinerary(item, to: tripId)
-                        }
-                    )
-                    .padding(.leading, 72)
-                    .padding(.bottom, 4)
                 } else if let item = slot.item {
                     ScheduledSlotRow(slot: slot, item: item, timeFormatter: timeFormatter)
                 }

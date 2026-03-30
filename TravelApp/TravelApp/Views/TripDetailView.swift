@@ -10,6 +10,7 @@ struct TripDetailView: View {
     @State private var showTripSummary = false
     @State private var showDayWise = false
     @State private var showDeleteAlert = false
+    @State private var showEditTrip = false
     @Environment(\.dismiss) private var dismiss
     
     var filteredItineraries: [ItineraryItem] {
@@ -41,6 +42,9 @@ struct TripDetailView: View {
         .toolbar {
             ToolbarItem(placement: .primaryAction) {
                 Menu {
+                    Button { showEditTrip = true } label: {
+                        Label("Edit Trip", systemImage: "pencil")
+                    }
                     Button { showAddItinerary = true } label: {
                         Label("Add Itinerary", systemImage: "plus.circle")
                     }
@@ -64,6 +68,9 @@ struct TripDetailView: View {
                     Image(systemName: "ellipsis.circle")
                 }
             }
+        }
+        .sheet(isPresented: $showEditTrip) {
+            AddTripView(editingTrip: trip)
         }
         .sheet(isPresented: $showAddItinerary) {
             AddItineraryView(tripId: trip.id)
