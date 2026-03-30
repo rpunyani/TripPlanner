@@ -7,33 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AA000001 /* TravelAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA100001; };
-		AA000002 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA100002; };
-		AA000003 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA100003; };
-		AA000004 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA100004; };
-		AA000005 /* TripListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA100005; };
-		AA000006 /* TripDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA100006; };
-		AA000007 /* AddTripView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA100007; };
-		AA000008 /* AddItineraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA100008; };
-		AA000009 /* ItineraryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA100009; };
-		AA000010 /* CollaboratorsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA100010; };
-		AA000011 /* PhotoGalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA100011; };
-		AA000012 /* TripSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA100012; };
-		AA000013 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA100013; };
-		AA000014 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA100014; };
-		AA000015 /* CategoryFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA100015; };
-		AA000016 /* ItineraryCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA100016; };
-		AA000017 /* CollageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA100017; };
-		AA000018 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA100018; };
-		AA000019 /* DayWiseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA100019; };
-		AA000020 /* AISuggestionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA100020; };
-		AA000021 /* AISuggestionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA100021; };
-		BB200001 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = BB100001; };
-		BB200002 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = BB100002; };
-		BB200003 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = BB100003; };
-		AA000022 /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA100022; };
-		AA000023 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA100023; };
-		AA000024 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA100024; };
+		AA000001 /* TravelAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA100001 /* TravelAppApp.swift */; };
+		AA000002 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA100002 /* ContentView.swift */; };
+		AA000003 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA100003 /* Assets.xcassets */; };
+		AA000004 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA100004 /* Models.swift */; };
+		AA000005 /* TripListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA100005 /* TripListView.swift */; };
+		AA000006 /* TripDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA100006 /* TripDetailView.swift */; };
+		AA000007 /* AddTripView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA100007 /* AddTripView.swift */; };
+		AA000008 /* AddItineraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA100008 /* AddItineraryView.swift */; };
+		AA000009 /* ItineraryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA100009 /* ItineraryDetailView.swift */; };
+		AA000010 /* CollaboratorsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA100010 /* CollaboratorsView.swift */; };
+		AA000011 /* PhotoGalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA100011 /* PhotoGalleryView.swift */; };
+		AA000012 /* TripSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA100012 /* TripSummaryView.swift */; };
+		AA000013 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA100013 /* ImagePicker.swift */; };
+		AA000014 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA100014 /* DataStore.swift */; };
+		AA000015 /* CategoryFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA100015 /* CategoryFilterView.swift */; };
+		AA000016 /* ItineraryCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA100016 /* ItineraryCardView.swift */; };
+		AA000017 /* CollageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA100017 /* CollageView.swift */; };
+		AA000018 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA100018 /* Preview Assets.xcassets */; };
+		AA000019 /* DayWiseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA100019 /* DayWiseView.swift */; };
+		AA000020 /* AISuggestionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA100020 /* AISuggestionService.swift */; };
+		AA000021 /* AISuggestionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA100021 /* AISuggestionsView.swift */; };
+		AA000022 /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA100022 /* FirebaseService.swift */; };
+		AA000023 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA100023 /* AuthView.swift */; };
+		AA000024 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA100024 /* GoogleService-Info.plist */; };
+		BB200001 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = BB100001 /* FirebaseAuth */; };
+		BB200002 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = BB100002 /* FirebaseFirestore */; };
+		BB200003 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = BB100003 /* FirebaseStorage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,10 +58,10 @@
 		AA100019 /* DayWiseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayWiseView.swift; sourceTree = "<group>"; };
 		AA100020 /* AISuggestionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AISuggestionService.swift; sourceTree = "<group>"; };
 		AA100021 /* AISuggestionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AISuggestionsView.swift; sourceTree = "<group>"; };
-		AA200001 /* TravelApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA100022 /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
 		AA100023 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		AA100024 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		AA200001 /* TravelApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,12 +206,12 @@
 				Base,
 			);
 			mainGroup = AA400001;
-			productRefGroup = AA400005 /* Products */;
-			projectDirPath = "";
-			projectRoot = "";
 			packageReferences = (
 				BB000001 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
+			productRefGroup = AA400005 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
 			targets = (
 				AA500001 /* TravelApp */,
 			);
@@ -390,6 +390,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TravelApp/Preview Content\"";
+				DEVELOPMENT_TEAM = UJ65LJ8L6H;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "We need camera access to take photos for your trip.";
@@ -404,7 +405,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.travelapp.TravelApp;
+				PRODUCT_BUNDLE_IDENTIFIER = io.tripplanner.TravelApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -420,6 +421,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TravelApp/Preview Content\"";
+				DEVELOPMENT_TEAM = UJ65LJ8L6H;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "We need camera access to take photos for your trip.";
@@ -434,7 +436,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.travelapp.TravelApp;
+				PRODUCT_BUNDLE_IDENTIFIER = io.tripplanner.TravelApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
