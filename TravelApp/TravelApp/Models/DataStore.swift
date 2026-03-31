@@ -12,9 +12,6 @@ class DataStore {
     
     init() {
         loadTrips()
-        if trips.isEmpty {
-            loadSampleData()
-        }
     }
     
     // MARK: - Firebase Sync
@@ -96,9 +93,6 @@ class DataStore {
         useFirebase = false
         currentUserName = "Me"
         loadTrips()
-        if trips.isEmpty {
-            loadSampleData()
-        }
     }
     
     private func syncToFirebase(_ trip: Trip) {
@@ -239,116 +233,4 @@ class DataStore {
         trips.first { $0.id == id }
     }
     
-    // MARK: - Sample Data
-    private func loadSampleData() {
-        let cal = Calendar.current
-        let today = cal.startOfDay(for: Date())
-        
-        func makeTime(day: Int, hour: Int, minute: Int = 0) -> Date {
-            cal.date(bySettingHour: hour, minute: minute, second: 0, of: cal.date(byAdding: .day, value: day, to: today)!) ?? today
-        }
-        
-        let collaborators = [
-            Collaborator(name: "Alice Johnson", email: "alice@email.com", avatarColor: CodableColor(.blue)),
-            Collaborator(name: "Bob Smith", email: "bob@email.com", avatarColor: CodableColor(.green)),
-            Collaborator(name: "Carol Davis", email: "carol@email.com", avatarColor: CodableColor(.orange))
-        ]
-        
-        let flightItem = ItineraryItem(
-            title: "Flight to Tokyo",
-            description: "Direct flight from SFO to NRT. Window seat reserved.",
-            category: .flight,
-            date: today,
-            time: makeTime(day: 0, hour: 10, minute: 30),
-            endTime: makeTime(day: 0, hour: 22, minute: 0),
-            location: "San Francisco International Airport",
-            peopleJoining: ["Alice Johnson", "Bob Smith"],
-            flightNumber: "JL 001",
-            airline: "Japan Airlines",
-            departureAirport: "SFO",
-            arrivalAirport: "NRT"
-        )
-        
-        let hotelItem = ItineraryItem(
-            title: "Park Hyatt Tokyo",
-            description: "Luxury stay in Shinjuku with city views. Breakfast included.",
-            category: .hotel,
-            date: cal.date(byAdding: .day, value: 1, to: today)!,
-            time: makeTime(day: 1, hour: 15, minute: 0),
-            endTime: makeTime(day: 1, hour: 16, minute: 0),
-            location: "Shinjuku, Tokyo",
-            peopleJoining: ["Alice Johnson", "Bob Smith"],
-            hotelName: "Park Hyatt Tokyo",
-            checkInDate: cal.date(byAdding: .day, value: 1, to: today),
-            checkOutDate: cal.date(byAdding: .day, value: 5, to: today),
-            bookingReference: "PHT-2024-8821"
-        )
-        
-        let tourItem = ItineraryItem(
-            title: "Senso-ji Temple Visit",
-            description: "Morning visit to the iconic Senso-ji Temple in Asakusa. Guided tour with local historian.",
-            category: .tour,
-            date: cal.date(byAdding: .day, value: 2, to: today)!,
-            time: makeTime(day: 2, hour: 9, minute: 0),
-            endTime: makeTime(day: 2, hour: 12, minute: 0),
-            location: "Asakusa, Tokyo",
-            peopleJoining: ["Alice Johnson", "Bob Smith", "Carol Davis"]
-        )
-        
-        let diningItem = ItineraryItem(
-            title: "Sushi Saito Dinner",
-            description: "Omakase dinner at the three Michelin star sushi restaurant.",
-            category: .dining,
-            date: cal.date(byAdding: .day, value: 2, to: today)!,
-            time: makeTime(day: 2, hour: 19, minute: 0),
-            endTime: makeTime(day: 2, hour: 21, minute: 30),
-            location: "Roppongi, Tokyo",
-            peopleJoining: ["Alice Johnson"]
-        )
-        
-        let shoppingItem = ItineraryItem(
-            title: "Shibuya Shopping",
-            description: "Explore Shibuya 109 and surrounding area.",
-            category: .activity,
-            date: cal.date(byAdding: .day, value: 2, to: today)!,
-            time: makeTime(day: 2, hour: 14, minute: 0),
-            endTime: makeTime(day: 2, hour: 17, minute: 0),
-            location: "Shibuya, Tokyo",
-            peopleJoining: ["Alice Johnson", "Carol Davis"]
-        )
-        
-        let day3Tour = ItineraryItem(
-            title: "Meiji Shrine & Harajuku",
-            description: "Visit the serene Meiji Shrine then explore Takeshita Street.",
-            category: .tour,
-            date: cal.date(byAdding: .day, value: 3, to: today)!,
-            time: makeTime(day: 3, hour: 10, minute: 0),
-            endTime: makeTime(day: 3, hour: 13, minute: 0),
-            location: "Harajuku, Tokyo",
-            peopleJoining: ["Alice Johnson", "Bob Smith"]
-        )
-        
-        let day3Dinner = ItineraryItem(
-            title: "Ramen at Ichiran",
-            description: "Famous tonkotsu ramen in Shibuya.",
-            category: .dining,
-            date: cal.date(byAdding: .day, value: 3, to: today)!,
-            time: makeTime(day: 3, hour: 18, minute: 30),
-            endTime: makeTime(day: 3, hour: 19, minute: 30),
-            location: "Shibuya, Tokyo",
-            peopleJoining: ["Alice Johnson", "Bob Smith", "Carol Davis"]
-        )
-        
-        let sampleTrip = Trip(
-            name: "Tokyo Adventure",
-            destination: "Tokyo, Japan",
-            startDate: today,
-            endDate: cal.date(byAdding: .day, value: 7, to: today)!,
-            itineraries: [flightItem, hotelItem, tourItem, diningItem, shoppingItem, day3Tour, day3Dinner],
-            collaborators: collaborators
-        )
-        
-        trips = [sampleTrip]
-        saveTrips()
-    }
 }
