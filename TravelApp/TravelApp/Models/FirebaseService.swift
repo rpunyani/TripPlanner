@@ -117,10 +117,14 @@ class FirebaseService {
     private func uploadTripImages(_ trip: Trip) async throws -> Trip {
         var updated = trip
         
-        // Upload cover image
+        // Upload cover image — use a stable path so the URL doesn't change on re-upload
         if let coverData = trip.coverImageData, trip.coverImageURL == nil {
-            let url = try await uploadPhoto(coverData, tripId: trip.id, photoId: UUID(uuidString: "cover-\(trip.id.uuidString.prefix(8))") ?? UUID())
-            updated.coverImageURL = url
+            let ref = storage.reference().child("trips/\(trip.id.uuidString)/photos/cover.jpg")
+            let metadata = StorageMetadata()
+            metadata.contentType = "image/jpeg"
+            let _ = try await ref.putDataAsync(coverData, metadata: metadata)
+            let url = try await ref.downloadURL()
+            updated.coverImageURL = url.absoluteString
         }
         
         // Upload itinerary images

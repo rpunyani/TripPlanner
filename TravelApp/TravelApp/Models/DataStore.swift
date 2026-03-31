@@ -33,35 +33,27 @@ class DataStore {
             var merged: [Trip] = []
             for var remote in remoteTrips {
                 if let local = self.trips.first(where: { $0.id == remote.id }) {
-                    // Restore local image data where remote has none
+                    // Restore local image bytes where remote has none
+                    // But NEVER overwrite remote URLs — Firestore is the source of truth for URLs
                     if remote.coverImageData == nil { remote.coverImageData = local.coverImageData }
-                    // Preserve URLs from remote
-                    if remote.coverImageURL != nil && local.coverImageURL == nil {
-                        // URL is new from remote, keep it
-                    } else if local.coverImageURL != nil {
-                        remote.coverImageURL = local.coverImageURL
-                    }
-                    // Merge itinerary data
+                    
+                    // Merge itinerary data (only restore local bytes, not URLs)
                     remote.itineraries = remote.itineraries.map { var item = $0
                         if let localItem = local.itineraries.first(where: { $0.id == item.id }) {
                             if item.imageData == nil { item.imageData = localItem.imageData }
-                            if item.imageURL == nil { item.imageURL = localItem.imageURL }
-                            // Merge photos
                             item.photos = item.photos.map { var p = $0
                                 if let lp = localItem.photos.first(where: { $0.id == p.id }) {
                                     if p.imageData.isEmpty { p.imageData = lp.imageData }
-                                    if p.imageURL == nil { p.imageURL = lp.imageURL }
                                 }
                                 return p
                             }
                         }
                         return item
                     }
-                    // Merge trip photos
+                    // Merge trip photos (only restore local bytes)
                     remote.photos = remote.photos.map { var p = $0
                         if let lp = local.photos.first(where: { $0.id == p.id }) {
                             if p.imageData.isEmpty { p.imageData = lp.imageData }
-                            if p.imageURL == nil { p.imageURL = lp.imageURL }
                         }
                         return p
                     }
@@ -141,7 +133,12 @@ class DataStore {
     
     func updateTrip(_ trip: Trip) {
         if let index = trips.firstIndex(where: { $0.id == trip.id }) {
-            trips[index] = trip
+            var updated = trip
+            // If cover image changed, clear URL so it gets re-uploaded
+            if updated.coverImageData != trips[index].coverImageData {
+                updated.coverImageURL = nil
+            }
+            trips[index] = updated
             saveTrips()
             syncToFirebase(trips[index])
         }
